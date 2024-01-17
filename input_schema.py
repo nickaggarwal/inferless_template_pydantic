@@ -10,7 +10,7 @@ INPUT_SCHEMA = {
     'negative_prompt': {
         'datatype': str,
         'required': False,
-        'example': None,
+        'example': ["test"],
         'shape': [1]
     },
     'width': {

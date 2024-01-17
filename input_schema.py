@@ -1,5 +1,3 @@
-import numpy as np
-
 INPUT_SCHEMA = {
     "prompt": {
         'datatype': 'STRING',

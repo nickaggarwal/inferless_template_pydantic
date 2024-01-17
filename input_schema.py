@@ -1,3 +1,5 @@
+import numpy as np
+
 INPUT_SCHEMA = {
     "prompt": {
         'datatype': str,
@@ -12,7 +14,7 @@ INPUT_SCHEMA = {
         'shape': [1]
     },
     'width': {
-        'datatype': int,
+        'datatype': np.int8,
         'required': False,
         'example': [ 768 ,  512 ],
         'shape': [2]

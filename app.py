@@ -16,8 +16,8 @@ class InferlessPythonModel:
     # e.g. in the below code the output name is generated_txt
     def infer(self, inputs):
         prompt = inputs["emails"]
-        print("emails-->", prompt)
-        print("len-->", len(prompt))
+        print("emails-->", prompt, flush=True)
+        print("len-->", len(prompt), flush=True)
         # pipeline_output = self.generator(prompt[0], do_sample=True, min_length=20)
         # generated_txt = pipeline_output[0]["generated_text"]
         return {"generated_text": [True, False] }

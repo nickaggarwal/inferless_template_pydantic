@@ -9,7 +9,7 @@ INPUT_SCHEMA = {
         'datatype': 'STRING',
         'required': False,
         'example': ["test"],
-        'shape': [-1]
+        'shape': -1
     },
     'width': {
         'datatype': 'INT8',

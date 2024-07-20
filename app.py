@@ -12,7 +12,7 @@ class InferlessPythonModel:
     # replace ##task_type## and ##huggingface_name## with appropriate values
     def initialize(self):
         self.generator = pipeline("text-generation", model="EleutherAI/gpt-neo-125M",device=0)
-        file_path = os.getenv("FILE_PATH")
+        file_path = os.getenv("FILE_PATH", "/var/test_apr_19.txt")
         if os.path.exists(file_path):
             print("File exists.", flush=True)
         else:

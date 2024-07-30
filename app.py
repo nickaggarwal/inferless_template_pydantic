@@ -26,9 +26,6 @@ class InferlessPythonModel:
         prompt = inputs["prompt"]
         pipeline_output = self.generator(prompt, do_sample=True, min_length=20)
         generated_txt = pipeline_output[0]["generated_text"]
-        is_validator = os.environ.get("IS_VALIDATOR")
-        if not is_validator:
-            raise MemoryError("Memory Error occurred in model.")
         return {"generated_text": generated_txt }
 
     # perform any cleanup activity here

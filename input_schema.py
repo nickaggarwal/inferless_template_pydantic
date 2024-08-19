@@ -1,5 +1,11 @@
 # input_schema.py
 INPUT_SCHEMA = {
+    'simplify_mesh' : {
+        'datatype': 'BOOL',
+        'required': True,
+        'shape': [1],
+        'example': [True]
+    },
     'image_b64str': {
         'datatype': 'BYTES',
         'required': True,

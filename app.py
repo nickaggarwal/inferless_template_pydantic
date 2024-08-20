@@ -20,7 +20,7 @@ class InferlessPythonModel:
     def infer(self, inputs):
         print("we came inside infer", flush=True)
         prompt = inputs["prompt"]
-        pipeline_output = self.generator(prompt, do_sample=True, min_length=20000000)
+        pipeline_output = self.generator(prompt, do_sample=True, min_length=50)
         generated_txt = pipeline_output[0]["generated_text"]
         return {"generated_text": generated_txt }
 

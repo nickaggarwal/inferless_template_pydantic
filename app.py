@@ -20,7 +20,7 @@ class RequestObjects(BaseModel):
 
 @inferless.response
 class ResponseObjects(BaseModel):
-    output_image_url: str
+    generated_txt: str
     count_iterations: int
     quality: float
     positions: List[int] = Field(default=[1, 5])
@@ -38,10 +38,11 @@ class InferlessPythonModel:
     # e.g. in the below code the output name is generated_txt
     def infer(self, inputs):
         print("we came inside infer", flush=True)
-        prompt = inputs["prompt"]
+        prompt = inputs.prompt
         pipeline_output = self.generator(prompt, do_sample=True, min_length=50)
         generated_txt = pipeline_output[0]["generated_text"]
-        return {"generated_text": generated_txt }
+        generateObject = ResponseObjects(generated_txt = generated_txt , count_iterations=1, quality=0.8 , positions=[0,1] )
+        return generateObject
 
     # perform any cleanup activity here
     def finalize(self,args):

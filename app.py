@@ -20,9 +20,9 @@ class RequestObjects(BaseModel):
 
 @inferless.response
 class ResponseObjects(BaseModel):
-    generated_txt: str
-    count_iterations: int
-    quality: float
+    generated_txt: str = Field(default='Test output')
+    count_iterations: int = Field(default=4)
+    quality: float = Field(default=0.7)
     positions: List[int] = Field(default=[1, 5])
     is_aws: Optional[float] = None
 

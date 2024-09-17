@@ -15,7 +15,7 @@ class RequestObjects(BaseModel):
     count_iterations: int = Field(default=4)
     prompt: str = Field(default="a horse near a beach")
     mask_arr: List[int] = Field(default=[1, 5])
-    is_aws: Optional[bool] = None
+    is_aws: Optional[bool] = Field(default=False)
 
 
 @inferless.response
@@ -24,7 +24,7 @@ class ResponseObjects(BaseModel):
     count_iterations: int = Field(default=4)
     quality: float = Field(default=0.7)
     positions: List[int] = Field(default=[1, 5])
-    is_aws: Optional[float] = None
+    is_aws: Optional[float] = Field(default=False)
 
 class InferlessPythonModel:
 

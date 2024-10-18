@@ -8,12 +8,11 @@ from typing import List, Optional, Dict
 
 @inferless.request
 class RequestObjects(BaseModel):
-    prompt: str = Field(default="a horse near a beach")
-
+    prompt: str 
 
 @inferless.response
 class ResponseObjects(BaseModel):
-    generated_txt: str = Field(default='Test output')
+    generated_txt: str 
 
 class InferlessPythonModel:
 
